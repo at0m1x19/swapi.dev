@@ -10,8 +10,10 @@ import io.restassured.http.ContentType.JSON
 import com.google.gson.Gson
 import utils.Endpoints.GET_PEOPLE_INFO
 import utils.StatusCodes.SUCCESS
+import utils.StatusCodes.NOT_FOUND
 import pojo.People
 import pojo.Person
+import pojo.NotFound
 
 class PeopleInfoTests {
     private val baseUrl = "https://swapi.dev/api/"
@@ -133,6 +135,36 @@ class PeopleInfoTests {
                         wasCreated, created
                     )
                 }
+            )
+        }
+    }
+
+    @Test
+    @DisplayName("Testing getting non-existent person by /people/:id")
+    fun getNonExistentPersonInfoTest() {
+        val nonExistentId = 0
+        val notFoundDetail = "Not found"
+
+        val specificPersonPath = GET_PEOPLE_INFO.endPoint + nonExistentId
+        val response = get(baseUrl + specificPersonPath)
+
+        with(response) {
+            assertEquals(
+                "Checking that statusCode is ${NOT_FOUND.status}",
+                NOT_FOUND.status, statusCode()
+            )
+            assertTrue(
+                "Checking that contentType is JSON",
+                contentType().contains(JSON.toString())
+            )
+        }
+
+        val objectFromResponseJson = Gson().fromJson(response.asString(), NotFound::class.java)
+
+        with(objectFromResponseJson) {
+            assertEquals(
+                "Checking that response contains detail $notFoundDetail",
+                notFoundDetail, detail
             )
         }
     }
