@@ -2,14 +2,14 @@ package people
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
-import utils.Endpoints.GET_PEOPLE_INFO
 import org.junit.Test
-import io.restassured.RestAssured.get
-import io.restassured.http.ContentType.JSON
-import utils.StatusCodes.SUCCESS
-import com.google.gson.Gson
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.assertAll
+import io.restassured.RestAssured.get
+import io.restassured.http.ContentType.JSON
+import com.google.gson.Gson
+import utils.Endpoints.GET_PEOPLE_INFO
+import utils.StatusCodes.SUCCESS
 import pojo.People
 import pojo.Person
 
