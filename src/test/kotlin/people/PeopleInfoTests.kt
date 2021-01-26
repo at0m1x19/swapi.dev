@@ -1,0 +1,4 @@
+package people
+
+class PeopleInfoTests {
+}
