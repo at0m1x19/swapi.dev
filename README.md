@@ -14,7 +14,7 @@ A few tests for [The Star Wars API](https://swapi.dev/documentation).
 ## How to run tests
 
 - Download project
-- Using terminal/CMD to project folder
+- Using terminal/CMD go to project folder
 
 Unix-like:
 ```
