@@ -15,6 +15,7 @@ A few tests for [The Star Wars API](https://swapi.dev/documentation).
 
 - Download project
 - Using terminal/CMD go to project folder
+- Execute:
 
 Unix-like:
 ```
