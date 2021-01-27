@@ -12,7 +12,7 @@ A few tests for [The Star Wars API](https://swapi.dev/documentation).
 
 
 ## How to run tests
-
+You should have JVM on your machine
 - Download project
 - Using terminal/CMD go to project folder
 - Execute:
