@@ -78,7 +78,7 @@ class PeopleInfoTests {
                 {
                     assertEquals(
                         "Checking that last person hair color is $lastPersonHairColor",
-                        lastPersonHairColor, results.last().hairColor
+                        lastPersonHairColor, results.last().hair_color
                     )
                 }
             )
